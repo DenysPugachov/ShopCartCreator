@@ -1,0 +1,67 @@
+body {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.cont {
+    padding: 0;
+    outline: solid #ccc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 4fr 15%;
+    grid-template-areas:
+        "logo back"
+        "front back"
+        "front price";
+}
+
+.cont>div {
+    border: 1px solid;
+}
+
+.foto img {
+    height: 100%;
+}
+
+.cont__logo img {
+    position: absolute;
+    height: 80%;
+    left: 41%;
+    top: 14%;
+
+}
+
+.cont__logo {
+    grid-area: logo;
+    position: relative;
+}
+
+
+.cont__front {
+    grid-area: front;
+}
+
+.cont__back {
+    grid-area: back;
+}
+
+.cont__price {
+    grid-area: price;
+    font-weight: bold;
+    text-align: center;
+    background: white;
+}
+
+.price__old {
+    font-size: 300%;
+    text-decoration: line-through;
+    color: black;
+    line-height: 50%;
+}
+
+.price__new {
+    line-height: 120%;
+    font-size: 400%;
+    color: red;
+}
