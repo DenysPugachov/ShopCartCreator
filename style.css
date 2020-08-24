@@ -6,23 +6,28 @@ body {
 
 .cont {
     padding: 0;
+    width: 1080px;
+    height: 1080px;
     outline: 1px solid;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10% 4fr 15%;
+    grid-template-rows: 1fr 10fr 1fr;
     grid-template-areas:
         "logo back"
         "front back"
         "front price";
+    justify-items: center;
 }
 
 .cont>div {
     /* border: 1px solid; */
-    overflow: hidden;
 }
 
 .foto img {
+    /* display: block; */
+    /*remove inline-block spaces*/
     height: 100%;
+
 }
 
 .cont__logo img {
