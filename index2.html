@@ -14,69 +14,154 @@
         <!-- tabs -->
         <!-- Tab links -->
         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'London')">
-                London
+            <button
+                class="tablinks"
+                id="first"
+                onclick="openTemplate(event, 'firstTempl')"
+            >
+                First
             </button>
-            <button class="tablinks" onclick="openCity(event, 'cont-form')">
-                Paris
+            <button
+                class="tablinks"
+                id="look"
+                onclick="openTemplate(event, 'lookTempl')"
+            >
+                Look
             </button>
-            <button class="tablinks" onclick="openCity(event, 'Tokyo')">
-                Tokyo
+            <button
+                class="tablinks"
+                id="third"
+                onclick="openTemplate(event, 'thirdTempl')"
+            >
+                Third
             </button>
+
+            <!-- Tab content -->
+            <div id="firstTempl" class="tabcontent">
+                <div class="cont-form">
+                    <input
+                        type="text"
+                        class="logo"
+                        name="Logo"
+                        placeholder="Logo"
+                    />
+                    <input
+                        type="text"
+                        class="front"
+                        name="Front"
+                        placeholder="Front"
+                    />
+                    <input
+                        type="text"
+                        class="back"
+                        name="Back"
+                        placeholder="Back"
+                    />
+                    <input
+                        type="num"
+                        class="old_price"
+                        name="Old_price"
+                        placeholder="Old_price"
+                    />
+                    <input
+                        type="text"
+                        class="new_price"
+                        name="New_price"
+                        placeholder="New_price"
+                    />
+                    <button class="renderBtn">Нарисовать</button>
+                </div>
+            </div>
+
+            <div id="lookTempl" class="tabcontent">
+                <div class="cont-form">
+                    <input
+                        type="text"
+                        class="logo"
+                        name="Logo"
+                        placeholder="Logo"
+                    />
+                    <input
+                        type="text"
+                        class="front"
+                        name="Front"
+                        placeholder="Front"
+                    />
+                    <input
+                        type="text"
+                        class="back"
+                        name="Back"
+                        placeholder="Back"
+                    />
+                    <input
+                        type="text"
+                        class="old-price"
+                        name="Old_price"
+                        placeholder="Old_price"
+                    />
+                    <input
+                        type="text"
+                        class="new_price"
+                        name="New_price"
+                        placeholder="New_price"
+                    />
+                    <input
+                        type="text"
+                        class="old_price_2"
+                        name="Old_price_2"
+                        placeholder="Old_price_2"
+                    />
+                    <input
+                        type="text"
+                        class="new_price_2"
+                        name="New_price_2"
+                        placeholder="New_price_2"
+                    />
+
+                    <button class="renderBtn">Нарисовать</button>
+                </div>
+            </div>
+
+            <div id="thirdTempl" class="tabcontent">
+                <div class="cont-form">
+                    <input
+                        type="text"
+                        class="logo"
+                        name="Logo"
+                        placeholder="Logo"
+                    />
+                    <input
+                        type="text"
+                        class="front"
+                        name="Front"
+                        placeholder="Front"
+                    />
+                    <input
+                        type="text"
+                        class="back"
+                        name="Back"
+                        placeholder="Back"
+                    />
+                    <input
+                        type="text"
+                        class="old_price"
+                        name="Old_price"
+                        placeholder="Old_price"
+                    />
+                    <input
+                        type="text"
+                        class="new_price"
+                        name="New_price"
+                        placeholder="New_price"
+                    />
+                    <button class="renderBtn">Нарисовать</button>
+                </div>
+            </div>
         </div>
-
-        <!-- Tab content -->
-        <div id="London" class="tabcontent">
-            <h3>London</h3>
-            <p>London is the capital city of England.</p>
-        </div>
-
-        <div id="Paris" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p>
-        </div>
-
-        <div id="Tokyo" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>
-
-        <!-- forms -->
-        <div class="cont-form">
-            <input type="text" id="Logo" name="Logo" placeholder="Logo" />
-            <input type="text" id="Front" name="Front" placeholder="Front" />
-            <input type="text" id="Back" name="Back" placeholder="Back" />
-            <input
-                type="num"
-                id="Old_price"
-                name="Old_price"
-                placeholder="Old_price"
-            />
-            <input
-                type="text"
-                id="New_price"
-                name="New_price"
-                placeholder="New_price"
-            />
-            <input
-                type="num"
-                id="Old_price_2"
-                name="Old_price_2"
-                placeholder="Old_price_2"
-            />
-            <input
-                type="text"
-                id="New_price_2"
-                name="New_price_2"
-                placeholder="New_price_2"
-            />
-
-            <button class="renderBtn">Нарисовать</button>
-        </div>
-
         <br />
         <br />
         <div class="cartPlaceHolder"></div>
         <script src="js.js"></script>
+        <!-- <script src="./js/tabs.js"></script> -->
     </body>
 </html>
