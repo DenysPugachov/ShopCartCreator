@@ -1,5 +1,15 @@
-const cartPlaceHolder = document.querySelector(".cartPlaceHolder");
+//TODO:
+//-chose logo form dorp-down list (can add custom url);
+//-rewrite tabs on item * content-item classes;
+//-add new templates 2item;
+//-use modern template;
+//-make modules;
+//-use webpack;
+//-use less & scss;
+//-use React;
+//-add download feature;
 
+const cartPlaceHolder = document.querySelector(".cartPlaceHolder");
 const renderBtns = document.querySelectorAll(".renderBtn");
 const inputLogos = document.querySelectorAll(".logo");
 const inputFronts = document.querySelectorAll(".front");
@@ -14,10 +24,7 @@ const cartTempHtml = document.createElement("div");
 //set default open tab
 document.querySelector("#first").click();
 
-
-
 function generateHTML(templateIndex, logo, front, back, oldPrice, newPrice, oldPrice_2, newPrice_2) {
-
     const first = `
 <div class="cont">
 <div class="item logo">
@@ -101,20 +108,21 @@ function openTemplate(evt, templateName) {
     let i, tabContent, tabLinks;
 
     // Get all elements with class="tabcontent" and hide them
-    tabContent = document.getElementsByClassName("tabcontent");
+    tabContent = document.querySelectorAll(".tabcontent");
     for (i = 0; i < tabContent.length; i++) {
         tabContent[i].style.display = "none";
     }
 
     // Get all elements with class="tablinks" and remove the class "active"
-    tabLinks = document.getElementsByClassName("tablinks");
+    tabLinks = document.querySelectorAll(".tablinks");
     for (i = 0; i < tabLinks.length; i++) {
         tabLinks[i].className = tabLinks[i].className.replace(" active", "");
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(templateName).style.display = "block";
-    evt.currentTarget.className += " active";
+    evt.currentTarget.classList.add("active");
+    // evt.currentTarget.className += " active";
 }
 
 
@@ -130,10 +138,10 @@ renderBtns.forEach((button, index) => {
             inputOld_price2.value,
             inputNew_price2.value
         );
-    })
-})
+    });
+});
 
 //clear inputs
 document.querySelector("#clearBtn").addEventListener("click", () => {
     document.querySelectorAll("input").forEach(input => input.value = "");
-})
+});
