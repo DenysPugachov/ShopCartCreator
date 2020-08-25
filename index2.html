@@ -3,44 +3,165 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/jpg" href="/favicon.png" />
         <link rel="stylesheet" href="./CSS/style2.css" />
+        <link rel="stylesheet" href="./CSS/tabs.css" />
         <link rel="stylesheet" href="./CSS/styleForm.css" />
         <link rel="stylesheet" href="./CSS/lookTempl.css" />
         <title>ShopCartCreator</title>
     </head>
     <body>
-        <div class="cont-form">
-            <input type="text" id="Logo" name="Logo" placeholder="Logo" />
-            <input type="text" id="Front" name="Front" placeholder="Front" />
-            <input type="text" id="Back" name="Back" placeholder="Back" />
-            <input
-                type="num"
-                id="Old_price"
-                name="Old_price"
-                placeholder="Old_price"
-            />
-            <input
-                type="text"
-                id="New_price"
-                name="New_price"
-                placeholder="New_price"
-            />
-            <input
-                type="num"
-                id="Old_price_2"
-                name="Old_price_2"
-                placeholder="Old_price_2"
-            />
-            <input
-                type="text"
-                id="New_price_2"
-                name="New_price_2"
-                placeholder="New_price_2"
-            />
+        <!-- tabs -->
+        <!-- Tab links -->
+        <div class="tab">
+            <button
+                class="tablinks"
+                id="first"
+                onclick="openTemplate(event, 'firstTempl')"
+            >
+                First
+            </button>
+            <button
+                class="tablinks"
+                id="look"
+                onclick="openTemplate(event, 'lookTempl')"
+            >
+                Look
 
-            <button class="renderBtn">Нарисовать</button>
+                <button
+                    class="tablinks"
+                    id="third"
+                    onclick="openTemplate(event, 'thirdTempl')"
+                >
+                    Third
+                </button>
+            </button>
+
+            <button class="tablinks" id="clearBtn">
+                Clear
+            </button>
+            <!-- Tab content -->
+            <div id="firstTempl" class="tabcontent">
+                <div class="cont-form">
+                    <input
+                        type="text"
+                        class="logo"
+                        name="Logo"
+                        placeholder="Logo"
+                    />
+                    <input
+                        type="text"
+                        class="front"
+                        name="Front"
+                        placeholder="Front"
+                    />
+                    <input
+                        type="text"
+                        class="back"
+                        name="Back"
+                        placeholder="Back"
+                    />
+                    <input
+                        type="num"
+                        class="old_price"
+                        name="Old_price"
+                        placeholder="Old_price"
+                    />
+                    <input
+                        type="text"
+                        class="new_price"
+                        name="New_price"
+                        placeholder="New_price"
+                    />
+                    <button class="renderBtn">Нарисовать</button>
+                </div>
+            </div>
+
+            <div id="lookTempl" class="tabcontent">
+                <div class="cont-form">
+                    <input
+                        type="text"
+                        class="logo"
+                        name="Logo"
+                        placeholder="Logo"
+                    />
+                    <input
+                        type="text"
+                        class="front"
+                        name="Front"
+                        placeholder="Front"
+                    />
+                    <input
+                        type="text"
+                        class="back"
+                        name="Back"
+                        placeholder="Back"
+                    />
+                    <input
+                        type="text"
+                        class="old_price_2"
+                        name="Old_price_2"
+                        placeholder="Old_price_2"
+                    />
+                    <input
+                        type="text"
+                        class="new_price_2"
+                        name="New_price_2"
+                        placeholder="New_price_2"
+                    />
+                    <input
+                        type="text"
+                        class="old_price"
+                        name="Old_price"
+                        placeholder="Old_price"
+                    />
+                    <input
+                        type="text"
+                        class="new_price"
+                        name="New_price"
+                        placeholder="New_price"
+                    />
+
+                    <button class="renderBtn">Нарисовать</button>
+                </div>
+            </div>
+
+            <div id="thirdTempl" class="tabcontent">
+                <div class="cont-form">
+                    <input
+                        type="text"
+                        class="logo"
+                        name="Logo"
+                        placeholder="Logo"
+                    />
+                    <input
+                        type="text"
+                        class="front"
+                        name="Front"
+                        placeholder="Front"
+                    />
+                    <input
+                        type="text"
+                        class="back"
+                        name="Back"
+                        placeholder="Back"
+                    />
+                    <input
+                        type="text"
+                        class="old_price"
+                        name="Old_price"
+                        placeholder="Old_price"
+                    />
+                    <input
+                        type="text"
+                        class="new_price"
+                        name="New_price"
+                        placeholder="New_price"
+                    />
+                    <button class="renderBtn">Нарисовать</button>
+                </div>
+            </div>
         </div>
-
         <br />
         <br />
         <div class="cartPlaceHolder"></div>
