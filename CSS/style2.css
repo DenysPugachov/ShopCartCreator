@@ -5,7 +5,7 @@ body {
 .cont {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 1fr 10fr 2fr;
     height: 1080px;
     width: 1080px;
     outline: solid #ccc;
@@ -51,10 +51,10 @@ img {
 }
 
 .price__old {
-    font-size: 180%;
+    font-size: 400%;
     text-decoration: line-through;
     color: black;
-    line-height: 0;
+    /* line-height: 0; */
     font-weight: bold;
 }
 

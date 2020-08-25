@@ -76,7 +76,7 @@ function generateHTML(logo, front, back, oldPrice, newPrice, oldPrice_2, newPric
 </div>
 
         `
-    cartTempHtml.innerHTML = htmlTemplLook;
+    cartTempHtml.innerHTML = htmlTemplFirst;
 }
 
 
