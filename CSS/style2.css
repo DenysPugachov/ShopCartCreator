@@ -24,20 +24,38 @@ img {
     position: absolute;
 }
 
-.front {
-    grid-column: 1/2;
-    grid-row: 2/4;
-}
-
-.back {
-    grid-column: 2/3;
-    grid-row: 1/3;
+.logo img {
+    /* height: 130%; */
+    /* top: -14%; */
 }
 
 .logo {
     grid-column: 1/2;
     grid-row: 1/2;
+
 }
+
+.front img {
+    height: 100%;
+}
+
+.front {
+    grid-column: 1/2;
+    grid-row: 2/4;
+
+}
+
+.back img {
+    height: 100%;
+}
+
+.back {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    height: 100%;
+}
+
+
 
 .price {
     grid-column: 2/3;
@@ -45,10 +63,7 @@ img {
 
 }
 
-.logo img {
-    /* height: 130%; */
-    /* top: -14%; */
-}
+
 
 .price__old {
     font-size: 400%;
