@@ -1,0 +1,20 @@
+.first>.logo {
+    grid-column: 1/7;
+    grid-row: 1/2;
+}
+
+.first>.front {
+    grid-column: 1/7;
+    grid-row: 2/13;
+
+}
+
+.first>.back {
+    grid-column: 7/13;
+    grid-row: 1/11;
+}
+
+.first>.price {
+    grid-column: 7/13;
+    grid-row: 11/13;
+}

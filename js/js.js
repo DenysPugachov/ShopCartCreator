@@ -14,6 +14,7 @@ const renderBtns = document.querySelectorAll(".renderBtn");
 const inputLogos = document.querySelectorAll(".logo");
 const inputFronts = document.querySelectorAll(".front");
 const inputBacks = document.querySelectorAll(".back");
+const inputSide = document.querySelector(".side");
 const inputNew_prices = document.querySelectorAll(".new_price");
 const inputOld_prices = document.querySelectorAll(".old_price");
 const inputNew_price2 = document.querySelector(".new_price_2");
@@ -21,87 +22,109 @@ const inputOld_price2 = document.querySelector(".old_price_2");
 const cartTempHtml = document.createElement("div");
 const inputs = document.querySelectorAll("input");
 
-
 //set default open tab
 document.querySelector("#first").click();
 
-function generateHTML(templateIndex, logo, front, back, oldPrice, newPrice, oldPrice_2, newPrice_2) {
+function generateHTML(
+    templateIndex,
+    logo,
+    front,
+    back,
+    side,
+    oldPrice,
+    newPrice,
+    oldPrice_2,
+    newPrice_2,
+) {
     const first = `
-<div class="cont">
-<div class="item logo">
-<img
-src="${logo}"
-alt=""
-/>
-</div>
-<div class="item front">
-<img
-src="${front}"
-alt=""
-/>
-</div>
-<div class="item back">
-<img
-src="${back}"
-alt=""
-/>
-</div>
-<div class="item price">
+    <div class="container first">
+    <div class="items logo">
+        <img src="${logo}"
+            alt="logo" />
+    </div>
+    <div class="items front">
+        <img src="${front}" alt="front" />
+    </div>
+    <div class="items back">
+        <img src="${back}" alt="back" />
+    </div>
+<div class="items price">
 <p>
-<span class="price__old">${oldPrice}</span> <br />
+<span class="price__old">${oldPrice}</span>
+<br />
 <span class="price__new">${newPrice}</span>
 </p>
 </div>
 </div> `;
 
-
     const look = `
-<div class="cont cont_look">
-<div class="item logo">
+<div class="container look">
+<div class="items logo">
 <img src="${logo}"
 alt=""
 />
 </div>
-<div class="item front">
+<div class="items front">
 <img
 src="${front}"
 alt=""
 />
 </div>
-<div class="item back">
+<div class="items back">
 <img
 src="${back}"
 alt=""
 />
 </div>
-<div class="item price price-1">
+<div class="items price price-1">
 <p>
 <span class="price__old">${oldPrice}</span> <br />
 <span class="price__new">${newPrice}</span>
 </p>
 </div>
-<div class="item price price-2">
+<div class="items price price-2">
 <p>
 <span class="price__old">${oldPrice_2}</span> <br />
 <span class="price__new">${newPrice_2}</span>
 </p>
 </div>
-</div>
-`;
+</div>`;
+
+    const third = `
+<div class="container third">
+        <div class="items logo">
+            <img src="${logo}"
+                alt="logo" />
+        </div>
+        <div class="items front">
+            <img src="${front}" alt="front" />
+        </div>
+        <div class="items side">
+            <img src="${side}"alt="side" />
+        </div>
+        <div class="items back">
+            <img src="${back}" alt="back" />
+        </div>
+        <div class="items price">
+            <p>
+                <span class="price__old">${oldPrice}</span> <br />
+                <span class="price__new">${newPrice}</span>
+            </p>
+        </div>
+    </div>`;
 
     if (templateIndex === 0) {
         cartTempHtml.innerHTML = first;
     } else if (templateIndex === 1) {
         cartTempHtml.innerHTML = look;
-    } else if (cartTempHtml === 2) {
-        // cartTempHtml.innerHTML = third;
-        console.log("You don't have third template");
+    } else if (templateIndex === 2) {
+        cartTempHtml.innerHTML = third;
+    } else {
+        console.log("templateIndex = ", templateIndex, "You don't have third template");
     }
 
     cartPlaceHolder.append(cartTempHtml);
 }
-
-
 
 //Tabs
 function openTemplate(evt, templateName) {
@@ -126,32 +149,34 @@ function openTemplate(evt, templateName) {
     // evt.currentTarget.className += " active";
 }
 
-
-
 renderBtns.forEach((button, index) => {
     button.addEventListener("click", () => {
-        generateHTML(index,
+        generateHTML(
+            index,
             inputLogos[index].value,
             inputFronts[index].value,
             inputBacks[index].value,
+
+            //FIXME:only index
+            inputSide.value,
+
             inputOld_prices[index].value,
             inputNew_prices[index].value,
             inputOld_price2.value,
-            inputNew_price2.value
+            inputNew_price2.value,
         );
     });
 });
 
 //clear inputs
 document.querySelector("#clearBtn").addEventListener("click", () => {
-    inputs.forEach(input => input.value = "");
+    inputs.forEach(input => (input.value = ""));
 });
 
 //clear input on keyDown
 function clearInputOnKeyDown() {
     inputs.forEach(input => {
-        input.addEventListener("mousedown", e => e.target.value = "");
-
+        input.addEventListener("mousedown", e => (e.target.value = ""));
     });
-};
+}
 clearInputOnKeyDown();
