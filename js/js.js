@@ -19,6 +19,7 @@ const inputOld_prices = document.querySelectorAll(".old_price");
 const inputNew_price2 = document.querySelector(".new_price_2");
 const inputOld_price2 = document.querySelector(".old_price_2");
 const cartTempHtml = document.createElement("div");
+const inputs = document.querySelectorAll("input");
 
 
 //set default open tab
@@ -143,5 +144,14 @@ renderBtns.forEach((button, index) => {
 
 //clear inputs
 document.querySelector("#clearBtn").addEventListener("click", () => {
-    document.querySelectorAll("input").forEach(input => input.value = "");
+    inputs.forEach(input => input.value = "");
 });
+
+//clear input on keyDown
+function clearInputOnKeyDown() {
+    inputs.forEach(input => {
+        input.addEventListener("mousedown", e => e.target.value = "");
+
+    });
+};
+clearInputOnKeyDown();
