@@ -124,6 +124,9 @@ alt=""
     }
 
     cartPlaceHolder.append(cartTempHtml);
+
+    //make image movable inside container
+    moveImage(document.querySelectorAll("img"));
 }
 
 //Tabs
@@ -180,3 +183,73 @@ function clearInputOnKeyDown() {
     });
 }
 clearInputOnKeyDown();
+
+
+//make image movable inside container
+function moveImage(image) {
+    let mousePosition;
+    let offset;
+    let isDown = false;
+
+    image.forEach(img => {
+
+        //TODO:
+        //Zoom image on mouse wheel
+        // img.addEventListener('wheel', zoom);
+
+        img.addEventListener("mousedown", e => {
+            isDown = true;
+            offset = [
+                e.target.offsetLeft - e.clientX,
+                e.target.offsetTop - e.clientY
+            ];
+            console.log(e.target);
+            move(isDown, offset, e.target);
+
+
+        }, true);
+    });
+
+    function move(isDown, offset, target) {
+        document.addEventListener('mousemove', function (event) {
+            event.preventDefault();
+            if (isDown) {
+                mousePosition = {
+                    x: event.clientX,
+                    y: event.clientY
+                };
+                target.style.left = (mousePosition.x + offset[0]) + 'px';
+                target.style.top = (mousePosition.y + offset[1]) + 'px';
+            }
+        }, true);
+
+        document.addEventListener('mouseup', function () {
+            isDown = false;
+        }, true);
+
+    }
+};
+
+
+// function zoom(event) {
+//     event.preventDefault();
+
+//     if (event.deltaY < 0) {
+//       // Zoom in
+//       scale *= event.deltaY * -2;
+//     }
+//     else {
+//       // Zoom out
+//       scale /= event.deltaY * 2;
+//     }
+
+//     // Restrict scale
+//     scale = Math.min(Math.max(.125, scale), 4);
+
+//     // Apply scale transform
+//     el.style.transform = `scale(${scale})`;
+//   }
+
+//   let scale = 1;
+//   const el = document.querySelector('div');
+//   document.onwheel = zoom;
