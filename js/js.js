@@ -184,18 +184,14 @@ function clearInputOnKeyDown() {
 }
 clearInputOnKeyDown();
 
-
 //make image movable inside container
 function moveImage(image) {
     let mousePosition;
     let offset;
     let isDown = false;
+    let scale = 1;
 
     image.forEach(img => {
-
-        //TODO:
-        //Zoom image on mouse wheel
-        // img.addEventListener('wheel', zoom);
 
         img.addEventListener("mousedown", e => {
             isDown = true;
@@ -203,14 +199,11 @@ function moveImage(image) {
                 e.target.offsetLeft - e.clientX,
                 e.target.offsetTop - e.clientY
             ];
-            console.log(e.target);
-            move(isDown, offset, e.target);
-
-
+            move(isDown, offset, e.target, scale);
         }, true);
     });
 
-    function move(isDown, offset, target) {
+    function move(isDown, offset, target, scale) {
         document.addEventListener('mousemove', function (event) {
             event.preventDefault();
             if (isDown) {
@@ -223,33 +216,24 @@ function moveImage(image) {
             }
         }, true);
 
+        document.addEventListener('wheel', function (event) {
+            if (isDown) {
+                if (event.deltaY < 0) {
+                    // Zoom in
+                    scale = scale + 0.01;
+                }
+                else {
+                    // Zoom out
+                    scale = scale - 0.01;
+                }
+                // Apply scale transform
+                target.style.transform = `scale(${scale})`;
+            }
+        }, true);
+
         document.addEventListener('mouseup', function () {
             isDown = false;
         }, true);
 
     }
 };
-
-
-// function zoom(event) {
-//     event.preventDefault();
-
-//     if (event.deltaY < 0) {
-//       // Zoom in
-//       scale *= event.deltaY * -2;
-//     }
-//     else {
-//       // Zoom out
-//       scale /= event.deltaY * 2;
-//     }
-
-//     // Restrict scale
-//     scale = Math.min(Math.max(.125, scale), 4);
-
-//     // Apply scale transform
-//     el.style.transform = `scale(${scale})`;
-//   }
-
-//   let scale = 1;
-//   const el = document.querySelector('div');
-//   document.onwheel = zoom;
