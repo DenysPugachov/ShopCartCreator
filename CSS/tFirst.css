@@ -1,11 +1,13 @@
 .first>.logo {
     grid-column: 1/7;
     grid-row: 1/2;
+    z-index: 50;
+    overflow: visible;
 }
 
 .first>.front {
     grid-column: 1/7;
-    grid-row: 2/13;
+    grid-row: 1/13;
 
 }
 
