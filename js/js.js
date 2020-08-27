@@ -107,8 +107,8 @@ alt=""
         </div>
         <div class="items price">
             <p>
-                <span class="price__old">${oldPrice}</span> <br />
-                <span class="price__new">${newPrice}</span>
+                <span class="price__old ">${oldPrice}</span> <br />
+                <span class="price__new ">${newPrice}</span>
             </p>
         </div>
     </div>`;
@@ -194,6 +194,7 @@ function moveImage(image) {
     image.forEach(img => {
 
         img.addEventListener("mousedown", e => {
+            // event.preventDefault();
             isDown = true;
             offset = [
                 e.target.offsetLeft - e.clientX,

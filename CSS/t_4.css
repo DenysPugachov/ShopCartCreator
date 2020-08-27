@@ -4,9 +4,8 @@
 
 .third>.logo {
     grid-column: 1/12;
-    grid-row: 1/2;
+    grid-row: 1/3;
     z-index: 50;
-    overflow: visible;
 }
 
 .third>.front {
