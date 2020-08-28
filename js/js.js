@@ -15,6 +15,10 @@ const inputLogos = document.querySelectorAll(".logo");
 const inputFronts = document.querySelectorAll(".front");
 const inputBacks = document.querySelectorAll(".back");
 const inputSide = document.querySelector(".side");
+
+
+const inputText = document.querySelector(".add_text"); console.log(inputText);
+
 const inputNew_prices = document.querySelectorAll(".new_price");
 const inputOld_prices = document.querySelectorAll(".old_price");
 const inputNew_price2 = document.querySelector(".new_price_2");
@@ -35,6 +39,7 @@ function generateHTML(
     newPrice,
     oldPrice_2,
     newPrice_2,
+    text
 ) {
     const first = `
     <div class="container first">
@@ -53,6 +58,29 @@ function generateHTML(
 <span class="price__old">${oldPrice}</span>
 <br />
 <span class="price__new">${newPrice}</span>
+</p>
+</div>
+</div> `;
+
+    const first_2 = `
+    <div class="container first_2">
+    <div class="items logo">
+        <img src="${logo}"
+            alt="logo" />
+    </div>
+    <div class="items front">
+        <img src="${front}" alt="front" />
+    </div>
+    <div class="items back">
+        <img src="${back}" alt="back" />
+    </div>
+<div class="items price">
+<p>
+<span   id="first_2_old" class="price__old">${oldPrice}</span>
+<br />
+<span  id="first_2_new" class="price__new">${newPrice}</span>
+<br />
+<span id="first_2_text" class="price__text">${text}</span>
 </p>
 </div>
 </div> `;
@@ -119,6 +147,8 @@ alt=""
         cartTempHtml.innerHTML = look;
     } else if (templateIndex === 2) {
         cartTempHtml.innerHTML = third;
+    } else if (templateIndex === 3) {
+        cartTempHtml.innerHTML = first_2;
     } else {
         console.log("templateIndex = ", templateIndex, "You don't have third template");
     }
@@ -167,6 +197,7 @@ renderBtns.forEach((button, index) => {
             inputNew_prices[index].value,
             inputOld_price2.value,
             inputNew_price2.value,
+            inputText.value,
         );
     });
 });

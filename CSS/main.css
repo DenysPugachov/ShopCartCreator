@@ -96,6 +96,14 @@ img {
     font-weight: bold;
 }
 
+.price__text {
+    line-height: 50%;
+    font-size: 400%;
+    color: red;
+    font-weight: bold;
+}
+
+
 .price {
     /* text-shadow: -.5px -.5px 0 #fff, .5px -.5px 0 #fff, -.5px .5px 0 #fff, 1px .5px 0 #fff; */
 }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./CSS/tFirst.css" />
     <link rel="stylesheet" href="./CSS/tLook.css" />
     <link rel="stylesheet" href="./CSS/tThird.css" />
-    <!-- <link rel="stylesheet" href="./CSS/t_4.css" /> -->
+    <link rel="stylesheet" href="./CSS/tFirst_2.css" />
     <title>ShopCartCreator</title>
 </head>
 
@@ -24,11 +24,14 @@
         </button>
         <button class="tablinks" id="look" onclick="openTemplate(event, 'lookTempl')">
             Look
-
-            <button class="tablinks" id="third" onclick="openTemplate(event, 'thirdTempl')">
-                Third
-            </button>
         </button>
+        <button class="tablinks" id="third" onclick="openTemplate(event, 'thirdTempl')">
+            Third
+        </button>
+        <button class="tablinks" id="third" onclick="openTemplate(event, 'first_2Templ')">
+            First_2
+        </button>
+
 
         <button class="tablinks" id="clearBtn">
             Clear
@@ -67,6 +70,18 @@
                 <input type="text" class="side" name="Side" placeholder="Side" />
                 <input type="text" class="old_price" name="Old_price" placeholder="Old_price" />
                 <input type="text" class="new_price" name="New_price" placeholder="New_price" />
+                <button class="renderBtn">Нарисовать</button>
+            </div>
+        </div>
+
+        <div id="first_2Templ" class="tabcontent">
+            <div class="cont-form">
+                <input type="text" class="logo" name="Logo" placeholder="Logo" />
+                <input type="text" class="front" name="Front" placeholder="Front" />
+                <input type="text" class="back" name="Back" placeholder="Back" />
+                <input type="num" class="old_price" name="Old_price" placeholder="Old_price" />
+                <input type="text" class="new_price" name="New_price" placeholder="New_price" />
+                <input type="text" class="add_text" name="add_text" placeholder="Add_text" />
                 <button class="renderBtn">Нарисовать</button>
             </div>
         </div>
